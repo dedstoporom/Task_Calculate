@@ -37,13 +37,27 @@ public class Logic extends Init
                 }
             } else if (output>10)
             {
+                if(output==100) System.out.println("C");}
+                int dec=output/10;
                 for(String key:collection) {
                     Object obj=romeMap.get(key);
-                    if(obj.equals(output-10))
-                    { System.out.println("X"+key); }
+                    if(obj.equals(output-(dec*10))) {
+                        if(output<20) System.out.println("X"+key);
+                        switch (dec)
+                        {
+                            case 2:System.out.print("XX"+key);break;
+                            case 3:System.out.print("XXX"+key);break;
+                            case 4:System.out.print("XL"+key);break;
+                            case 5:System.out.print("L"+key);break;
+                            case 6:System.out.print("LX"+key);break;
+                            case 7:System.out.print("LXX"+key);break;
+                            case 8:System.out.print("LXXX"+key);break;
+                            case 9:System.out.print("XC"+key);break;
+                        }
+                    }
                 }
             }
-    }
+
     public void start() throws Exception {
         int f=0;
         int check=0;
