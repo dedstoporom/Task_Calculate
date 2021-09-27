@@ -41,7 +41,8 @@ public class Logic extends Init
                 int dec=output/10;
                 for(String key:collection) {
                     Object obj=romeMap.get(key);
-                    if(obj.equals(output-(dec*10))) {
+                    if(obj.equals(output-(dec*10))||output%10==0&obj.equals(output/10)) {
+                        if(output-(dec*10)==0)key="";
                         if(output<20) System.out.println("X"+key);
                         switch (dec)
                         {
